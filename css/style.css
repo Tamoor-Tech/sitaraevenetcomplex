@@ -188,24 +188,28 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
 .premium-nav {
     padding: 20px 0;
     transition: var(--transition-smooth);
-    background: transparent;
-}
-.premium-nav.scrolled {
-    background: rgba(255, 248, 238, 0.95); /* Cream with opacity */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 15px 0;
-    border-bottom: 1px solid var(--beige);
-    box-shadow: 0 10px 30px rgba(43,23,23,0.08); /* slight brown shadow */
+    background: rgba(255, 248, 238, 0.5); /* semi-transparent cream */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(216, 183, 122, 0.3); /* faint gold/champagne border */
 }
 
-/* Navbar texts initially white when on hero, but we need logo burgundy */
+.premium-nav.scrolled {
+    background: rgba(255, 248, 238, 0.95); /* Opaque cream with opacity */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(216, 183, 122, 0.6);
+    box-shadow: 0 4px 15px rgba(43,23,23,0.06); /* soft transparent shadow */
+}
+
+/* Navbar Logo */
 .premium-nav .navbar-brand {
-    color: var(--burgundy);
+    color: var(--burgundy) !important;
     font-family: var(--font-heading);
     font-size: 1.5rem;
     line-height: 1;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 }
 .premium-nav .logo-icon {
     color: var(--gold);
@@ -213,38 +217,45 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
 }
 .premium-nav .logo-sub {
     font-family: var(--font-body);
-    font-size: 0.6rem;
-    letter-spacing: 4px;
+    font-size: 0.65rem;
+    letter-spacing: 5px;
     color: var(--brown);
     text-transform: uppercase;
 }
 
-/* Make nav links white on hero only initially */
+/* Nav links styling */
 .elegant-nav-links .nav-link {
-    color: var(--white);
-    font-size: 0.9rem;
+    color: var(--brown) !important;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 10px 20px;
-    transition: var(--transition-smooth);
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    margin: 0 8px;
     font-weight: 500;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* contrast against hero image */
-}
-.premium-nav.scrolled .nav-link {
-    color: var(--brown);
+    position: relative;
+    transition: all 0.3s ease;
     text-shadow: none;
 }
-.elegant-nav-links .nav-link:hover, .elegant-nav-links .nav-link.active {
-    color: var(--gold);
+.elegant-nav-links .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    right: 15px;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
 }
-.premium-nav.scrolled .nav-link:hover, .premium-nav.scrolled .nav-link.active {
-    color: var(--burgundy);
+.elegant-nav-links .nav-link:hover, .elegant-nav-links .nav-link.active, .elegant-nav-links .nav-link.tap-active {
+    color: var(--burgundy) !important;
+    transform: translateY(-2px);
 }
-
-.premium-nav.scrolled .navbar-brand {
-    color: var(--burgundy);
+.elegant-nav-links .nav-link:hover::after, .elegant-nav-links .nav-link.active::after, .elegant-nav-links .nav-link.tap-active::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
-
 
 /* Mobile Toggler */
 .custom-toggler {
@@ -262,9 +273,6 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     background-color: var(--burgundy);
     margin: 6px 0;
     transition: var(--transition-smooth);
-}
-.premium-nav:not(.scrolled) .toggler-icon {
-    background-color: var(--white);
 }
 
 /* Hero Section */
@@ -764,53 +772,92 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
 
 /* Footer */
 .site-footer {
-    padding: 5rem 0 2rem;
+    background-color: var(--burgundy);
+    color: var(--beige);
+    position: relative;
+}
+.footer-decoration {
+    letter-spacing: 2px;
+}
+.footer-decoration .decoration-line {
+    display: inline-block;
+    transform: translateY(-4px);
+}
+.footer-sitara {
+    font-family: var(--font-heading);
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.footer-brand .logo-sub {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+}
+.footer-brand-line {
+    width: 60px;
+    height: 1px;
+    background-color: var(--gold);
 }
 .footer-heading {
     font-size: 0.9rem;
     font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 2rem;
 }
 .footer-links, .footer-info {
     list-style: none;
     padding: 0; margin: 0;
 }
-.footer-links li { margin-bottom: 10px; }
+.footer-links li { margin-bottom: 12px; }
 .footer-links a {
     color: var(--beige);
     opacity: 0.75;
     text-decoration: none;
     transition: var(--transition-smooth);
     font-size: 0.95rem;
+    display: inline-block;
 }
-.footer-links a:hover {
+.footer-links a:hover, .footer-links a:active, .footer-links a.tap-active {
     color: var(--gold);
     opacity: 1;
-    padding-left: 5px;
+    transform: translateX(5px);
 }
 .footer-info li {
     display: flex;
     font-size: 0.95rem;
+    align-items: flex-start;
 }
 .social-links a {
     display: inline-flex;
     align-items: center; justify-content: center;
-    width: 40px; height: 40px;
-    border: 1px solid rgba(243, 229, 208, 0.4);
-    color: var(--beige);
+    width: 45px; height: 45px;
+    border: 1px solid var(--cream);
+    background: transparent;
+    color: var(--cream);
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 15px;
     transition: var(--transition-smooth);
     text-decoration: none;
 }
-.social-links a:hover {
-    background: var(--gold);
-    color: var(--burgundy);
-    border-color: var(--gold);
+.social-links a:hover, .social-links a:active, .social-links a.tap-active {
+    background: var(--wine-red);
+    color: var(--gold);
+    border-color: var(--wine-red);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.designer-credit { font-family: var(--font-heading); font-style: italic; }
+.footer-divider {
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.15;
+    margin: 2rem 0;
+}
+.copyright-text {
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
 
 /* Animations - Scroll Reveal */
 .scroll-reveal {
@@ -850,15 +897,39 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     .hero-content .luxury-heading { font-size: 3.5rem; }
     .venue-text-panel { padding: 3rem; }
     
-    .navbar-collapse {
-        background: rgba(255, 248, 238, 0.95);
-        padding: 20px;
+    /* When mobile menu opens, links need to be brown instead of white */
+    .collapse.show.navbar-collapse {
+        background: var(--cream);
+        padding: 30px 20px;
         border: 1px solid var(--beige);
         margin-top: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(43,23,23,0.1);
     }
-    
-    /* When mobile menu opens, links need to be brown instead of white */
-    .elegant-nav-links .nav-link { color: var(--burgundy) !important; text-shadow: none; }
+    .elegant-nav-links .nav-item {
+        border-bottom: 1px solid rgba(216, 183, 122, 0.2);
+    }
+    .elegant-nav-links .nav-item:last-child {
+        border-bottom: none;
+    }
+    .elegant-nav-links .nav-link { 
+        color: var(--brown) !important; 
+        padding: 15px 10px;
+        font-size: 1.1rem;
+    }
+    .elegant-nav-links .nav-link::after {
+        display: none;
+    }
+    .elegant-nav-links .nav-link:hover, .elegant-nav-links .nav-link:active, .elegant-nav-links .nav-link.tap-active {
+        background: rgba(216, 183, 122, 0.1);
+    }
+    .nav-cta {
+        margin-top: 20px;
+    }
+    .nav-cta .btn-primary {
+        display: flex;
+        width: 100%;
+    }
     
     .custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
     .custom-toggler[aria-expanded="true"] .toggler-icon:nth-child(2) { opacity: 0; }

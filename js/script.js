@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Mobile Touch Interactions
-    const touchElements = document.querySelectorAll('.premium-card, .event-card, .grid-item');
+    const touchElements = document.querySelectorAll('.premium-card, .event-card, .grid-item, .elegant-nav-links .nav-link, .footer-links a, .social-links a');
     
     touchElements.forEach(el => {
         el.addEventListener('touchstart', function(e) {
