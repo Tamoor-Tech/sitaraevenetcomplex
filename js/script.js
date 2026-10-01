@@ -153,31 +153,4 @@ document.addEventListener('DOMContentLoaded', () => {
             touchElements.forEach(el => el.classList.remove('tap-active'));
         }
     }, {passive: true});
-
-    // 5. Random Hero Backgrounds
-    const heroImagePool = [
-        'assets/images/hero.jpg',
-        'assets/images/venue-1.jpg',
-        'assets/images/gallery-1.jpg',
-        'assets/images/gallery-4.jpg'
-    ];
-    
-    const heroBg = document.querySelector('.hero-bg');
-    if (heroBg) {
-        let currentBgIndex = Math.floor(Math.random() * heroImagePool.length);
-        heroBg.style.backgroundImage = `url('${heroImagePool[currentBgIndex]}')`;
-
-        setInterval(() => {
-            let nextIndex = Math.floor(Math.random() * heroImagePool.length);
-            while (nextIndex === currentBgIndex) {
-                nextIndex = Math.floor(Math.random() * heroImagePool.length);
-            }
-            currentBgIndex = nextIndex;
-            heroBg.style.backgroundImage = `url('${heroImagePool[currentBgIndex]}')`;
-            // Reset animation to maintain zoomOut effect
-            heroBg.style.animation = 'none';
-            heroBg.offsetHeight; /* trigger reflow */
-            heroBg.style.animation = 'zoomOut 20s ease-out forwards';
-        }, 8000);
-    }
 });
