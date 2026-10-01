@@ -423,22 +423,46 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
 
 /* Stats Section */
 .stats-section {
-    padding: 3rem 0;
+    padding: 4rem 0;
+}
+.stats-section.stats-light {
+    background: var(--cream);
+    border-top: 1px solid var(--beige);
+    border-bottom: 1px solid var(--beige);
 }
 
-.stat-item { padding: 1rem; }
-.stat-value {
+.stat-item {
+    padding: 1.5rem 1rem;
+    position: relative;
+}
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+    height: 55px;
+    width: 1px;
+    background: rgba(216,183,122,0.4);
+}
+.stat-icon {
+    font-size: 1.5rem;
     color: var(--gold);
+    margin-bottom: 0.6rem;
+}
+.stat-value {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--burgundy);
     line-height: 1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 .stat-label {
-    color: var(--beige);
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: var(--brown);
+    opacity: 0.7;
 }
 
 /* Why Sitara Cards */
@@ -684,10 +708,13 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
 .review-stats .stars i { color: var(--gold); margin-right: 2px; }
 
 .review-content {
-    background: var(--white);
+    background: var(--cream);
     padding: 3rem;
     position: relative;
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
 }
+.review-stars i { color: var(--gold); font-size: 1rem; margin-right: 2px; }
 .quote-icon {
     font-size: 3rem;
     color: var(--gold);
@@ -696,11 +723,12 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     top: 30px; right: 30px;
 }
 .review-text {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-style: italic;
     line-height: 1.8;
     color: var(--brown);
     font-family: var(--font-heading);
+    margin-bottom: 0;
 }
 .btn-carousel {
     background: transparent;
@@ -728,18 +756,47 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     align-items: center; justify-content: center;
     font-size: 1.2rem;
     margin-right: 15px;
+    flex-shrink: 0;
 }
 .contact-item { display: flex; align-items: flex-start; }
 
-.map-placeholder {
-    width: 100%;
-    height: 500px;
+/* Premium Map Card */
+.map-luxury-card {
+    border: 1px solid rgba(216,183,122,0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: 0 8px 30px rgba(43,23,23,0.08);
+}
+.map-luxury-top {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    padding: 25px 30px;
 }
-.map-content {
+.map-pin-ring {
+    width: 55px; height: 55px;
+    border-radius: 50%;
+    background: rgba(216,183,122,0.15);
+    border: 1px solid rgba(216,183,122,0.5);
+    display: flex;
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.map-luxury-divider {
+    height: 1px;
+    background: rgba(216,183,122,0.3);
+    margin: 0;
+}
+.map-luxury-actions {
+    display: flex;
+    gap: 15px;
+    padding: 20px 30px;
+    flex-wrap: wrap;
+}
+.map-btn {
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
     text-align: center;
 }
 
