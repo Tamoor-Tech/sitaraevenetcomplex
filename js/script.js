@@ -129,4 +129,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowRight') nextImage();
         if (e.key === 'ArrowLeft') prevImage();
     });
+
+    // 4. Mobile Touch Interactions
+    const touchElements = document.querySelectorAll('.premium-card, .event-card, .grid-item');
+    
+    touchElements.forEach(el => {
+        el.addEventListener('touchstart', function(e) {
+            // Remove tap-active from peers
+            touchElements.forEach(sibling => {
+                if(sibling !== this) sibling.classList.remove('tap-active');
+            });
+            this.classList.toggle('tap-active');
+        }, {passive: true});
+    });
+    
+    // Clicking outside removes tap-active
+    document.addEventListener('touchstart', (e) => {
+        let isTouchElement = false;
+        touchElements.forEach(el => {
+            if (el.contains(e.target)) isTouchElement = true;
+        });
+        if (!isTouchElement) {
+            touchElements.forEach(el => el.classList.remove('tap-active'));
+        }
+    }, {passive: true});
 });

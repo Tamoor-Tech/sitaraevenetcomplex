@@ -85,7 +85,10 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
 
 /* Buttons */
 .btn-primary, .btn-secondary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
     padding: 12px 32px;
     font-size: 0.95rem;
     letter-spacing: 1px;
@@ -101,7 +104,7 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     color: var(--white);
     border: 1px solid var(--burgundy);
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active {
     background: var(--wine-red);
     color: var(--white);
     border-color: var(--gold);
@@ -112,12 +115,12 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     color: var(--burgundy);
     border: 1px solid var(--burgundy);
 }
-.btn-secondary:hover {
+.btn-secondary:hover, .btn-secondary:active {
     background: var(--wine-red);
     color: var(--white);
     border-color: var(--wine-red);
 }
-.btn-secondary.border-white:hover {
+.btn-secondary.border-white:hover, .btn-secondary.border-white:active {
     background: var(--white);
     color: var(--burgundy) !important;
 }
@@ -130,13 +133,15 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
+    min-height: 48px;
     transition: var(--transition-smooth);
     font-weight: 600;
 }
-.btn-text-link:hover {
+.btn-text-link:hover, .btn-text-link:active {
     color: var(--wine-red);
     transform: translateX(5px);
 }
+
 
 /* Floating Actions */
 .floating-actions {
@@ -450,11 +455,11 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     background: var(--gold);
     transition: var(--transition-smooth);
 }
-.premium-card:hover {
+.premium-card:hover, .premium-card.tap-active {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(107,31,42,0.08); /* Burgundy tinted shadow */
 }
-.premium-card:hover::before {
+.premium-card:hover::before, .premium-card.tap-active::before {
     width: 100%;
 }
 .card-icon {
@@ -528,11 +533,11 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     transform: translateX(-10px);
     transition: var(--transition-smooth);
 }
-.event-card:hover img { transform: scale(1.1); }
-.event-card:hover .event-overlay { background: linear-gradient(to top, rgba(142,47,61,0.9) 0%, rgba(107,31,42,0.4) 100%); }
-.event-card:hover .event-content h4 { color: var(--gold); transform: translateY(-30px); text-shadow: none; }
-.event-card:hover .event-content p { opacity: 1; transform: translateY(-20px); }
-.event-card:hover .event-arrow { opacity: 1; transform: translateX(0); }
+.event-card:hover img, .event-card.tap-active img { transform: scale(1.1); }
+.event-card:hover .event-overlay, .event-card.tap-active .event-overlay { background: linear-gradient(to top, rgba(142,47,61,0.9) 0%, rgba(107,31,42,0.4) 100%); }
+.event-card:hover .event-content h4, .event-card.tap-active .event-content h4 { color: var(--gold); transform: translateY(-30px); text-shadow: none; }
+.event-card:hover .event-content p, .event-card.tap-active .event-content p { opacity: 1; transform: translateY(-20px); }
+.event-card:hover .event-arrow, .event-card.tap-active .event-arrow { opacity: 1; transform: translateX(0); }
 
 /* Venue Editorial */
 .venue-image {
@@ -595,16 +600,16 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     color: var(--gold);
     margin-right: 8px;
 }
-.grid-item:hover img {
+.grid-item:hover img, .grid-item.tap-active img {
     transform: scale(1.05);
 }
-.grid-item:hover::after {
+.grid-item:hover::after, .grid-item.tap-active::after {
     content: '';
     position: absolute;
     top:0; left:0; right:0; bottom:0;
     background: rgba(107,31,42,0.3);
 }
-.grid-item:hover .img-overlay {
+.grid-item:hover .img-overlay, .grid-item.tap-active .img-overlay {
     opacity: 1;
     z-index: 10;
 }
