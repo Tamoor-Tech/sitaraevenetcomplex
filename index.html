@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -333,34 +333,63 @@
     </section>
 
     <!-- Testimonials / Reviews Section -->
-    <section id="reviews" class="reviews-section py-large bg-burgundy">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0 scroll-reveal">
-                    <h2 class="luxury-heading text-white">What Guests Say</h2>
-                    <div class="review-stats mt-4">
-                        <div class="stars mb-2">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <div class="rating-number h3 mb-0 text-white">4.1 / 5</div>
-                        <p class="text-beige small">Based on 90+ public reviews</p>
+    <section id="reviews" class="reviews-section py-large bg-cream text-center position-relative">
+        <div class="container scroll-reveal">
+            <span class="eyebrow text-burgundy mb-2 d-inline-block">GUEST EXPERIENCES</span>
+            <h2 class="luxury-heading text-burgundy mb-5">What Guests Say</h2>
+            
+            <div class="reviews-carousel-wrapper mx-auto" style="max-width: 800px; position:relative;">
+                <div class="review-slides-container" id="reviewSlides">
+                    <!-- Slide 1 -->
+                    <div class="review-slide active slide-fade">
+                        <div class="display-4 text-gold mb-3" style="font-family: var(--font-heading); opacity: 0.5;">&ldquo;&rdquo;</div>
+                        <h4 class="text-brown mb-3 font-heading" style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 1px;">EJAZ AHMAD BITTANI</h4>
+                        <p class="elegant-text luxury-review-text mx-auto text-brown" style="font-size: 1.3rem;">"Best Suitable Place for Wedding and any other Events."</p>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="review-slide">
+                        <div class="display-4 text-gold mb-3" style="font-family: var(--font-heading); opacity: 0.5;">&ldquo;&rdquo;</div>
+                        <h4 class="text-brown mb-3 font-heading" style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 1px;">Rizwan Ali</h4>
+                        <p class="elegant-text luxury-review-text mx-auto text-brown" style="font-size: 1.3rem;">"Good Taste and Good Environment 😍❤️"</p>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="review-slide">
+                        <div class="display-4 text-gold mb-3" style="font-family: var(--font-heading); opacity: 0.5;">&ldquo;&rdquo;</div>
+                        <h4 class="text-brown mb-3 font-heading" style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 1px;">Muhammad Yousuf Khan</h4>
+                        <p class="elegant-text luxury-review-text mx-auto text-brown" style="font-size: 1.3rem;">"A spacious event complex located on the enterance road of Badar Town, Jhang Road, Bhakkar having lush green open area and children's play ground."</p>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="review-slide">
+                        <div class="display-4 text-gold mb-3" style="font-family: var(--font-heading); opacity: 0.5;">&ldquo;&rdquo;</div>
+                        <h4 class="text-brown mb-3 font-heading" style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 1px;">Rehan Khan</h4>
+                        <p class="elegant-text luxury-review-text mx-auto text-brown" style="font-size: 1.3rem;">"Very good location"</p>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="review-slide">
+                        <div class="display-4 text-gold mb-3" style="font-family: var(--font-heading); opacity: 0.5;">&ldquo;&rdquo;</div>
+                        <h4 class="text-brown mb-3 font-heading" style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 1px;">Azhar Shahzad</h4>
+                        <p class="elegant-text luxury-review-text mx-auto text-brown" style="font-size: 1.3rem;">"Nice And Amazing Place for Events"</p>
                     </div>
                 </div>
-                <div class="col-lg-7 scroll-reveal delay-1">
-                    <div class="review-content bg-cream border-gold">
-                        <i class="fa-solid fa-quote-left quote-icon text-gold"></i>
-                        <p class="review-text text-brown">Sitara Event Complex has been the setting for countless cherished family celebrations across Bhakkar. Guest experiences and reviews will be featured here as they are made available.</p>
-                        <div class="review-author mt-4 d-flex align-items-center gap-3">
-                            <div class="review-stars">
-                                <i class="fa-solid fa-star text-gold"></i>
-                                <i class="fa-solid fa-star text-gold"></i>
-                                <i class="fa-solid fa-star text-gold"></i>
-                                <i class="fa-solid fa-star text-gold"></i>
-                                <i class="fa-solid fa-star-half-stroke text-gold"></i>
-                            </div>
-                            <span class="text-brown opacity-75 small">Based on 90+ public reviews on Google</span>
-                        </div>
-                    </div>
+
+                <!-- Navigation -->
+                <div class="review-nav d-flex align-items-center justify-content-center mt-4 mb-5 gap-4">
+                    <button id="prevReviewBtn" class="btn-review-nav text-burgundy" aria-label="Previous Review">
+                        <i class="fa-solid fa-arrow-left me-2"></i> Previous
+                    </button>
+                    <span class="review-indicator text-burgundy font-heading" style="font-size: 1.2rem; letter-spacing: 2px;">
+                        <span id="currentReviewIdx">01</span> / 05
+                    </span>
+                    <button id="nextReviewBtn" class="btn-review-nav text-burgundy" aria-label="Next Review">
+                        Next <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Google Reviews Button -->
+                <div class="mt-4">
+                    <a href="https://maps.google.com/?q=Sitara+Event+Complex+Bhakkar+Jhang+Road" target="_blank" class="btn-primary" style="border-color: var(--gold); background: var(--burgundy); color: var(--gold);">
+                        View All Google Reviews <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
+                    </a>
                 </div>
             </div>
         </div>

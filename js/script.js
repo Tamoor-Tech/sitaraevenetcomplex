@@ -153,4 +153,40 @@ document.addEventListener('DOMContentLoaded', () => {
             touchElements.forEach(el => el.classList.remove('tap-active'));
         }
     }, {passive: true});
+
+    // 5. VIP Review Carousel
+    const reviewSlides = document.querySelectorAll('.review-slide');
+    const prevReviewBtn = document.getElementById('prevReviewBtn');
+    const nextReviewBtn = document.getElementById('nextReviewBtn');
+    const currentReviewIdx = document.getElementById('currentReviewIdx');
+    let reviewIndex = 0;
+
+    if(reviewSlides.length > 0) {
+        function updateCarousel() {
+            reviewSlides.forEach((slide, idx) => {
+                slide.classList.remove('active', 'slide-fade');
+                if(idx === reviewIndex) {
+                    slide.classList.add('active', 'slide-fade');
+                }
+            });
+            if(currentReviewIdx) {
+                currentReviewIdx.textContent = (reviewIndex + 1).toString().padStart(2, '0');
+            }
+        }
+
+        if(prevReviewBtn) {
+            prevReviewBtn.addEventListener('click', () => {
+                reviewIndex = (reviewIndex - 1 + reviewSlides.length) % reviewSlides.length;
+                updateCarousel();
+            });
+        }
+
+        if(nextReviewBtn) {
+            nextReviewBtn.addEventListener('click', () => {
+                reviewIndex = (reviewIndex + 1) % reviewSlides.length;
+                updateCarousel();
+            });
+        }
+    }
+
 });

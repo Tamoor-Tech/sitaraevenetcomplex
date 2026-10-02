@@ -474,6 +474,8 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(107,31,42,0.02);
 }
 .premium-card::before {
     content: '';
@@ -499,7 +501,7 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--brown);
+    color: var(--burgundy);
 }
 .premium-card p {
     color: var(--brown);
@@ -514,6 +516,8 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     height: 400px;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(43,23,23,0.05);
 }
 .event-card img {
     width: 100%;
@@ -600,6 +604,7 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 4px;
 }
 .grid-item.tall { grid-row: span 2; }
 .grid-item.wide { grid-column: span 2; }
@@ -700,50 +705,38 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     opacity: 1;
 }
 
-/* Reviews */
-.review-stats .rating-number {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
+/* Reviews Carousel */
+.review-slide {
+    display: none;
+    padding: 2rem;
 }
-.review-stats .stars i { color: var(--gold); margin-right: 2px; }
-
-.review-content {
-    background: var(--cream);
-    padding: 3rem;
-    position: relative;
-    border-radius: 8px;
-    border-left: 3px solid var(--gold);
+.review-slide.active {
+    display: block;
 }
-.review-stars i { color: var(--gold); font-size: 1rem; margin-right: 2px; }
-.quote-icon {
-    font-size: 3rem;
-    color: var(--gold);
-    opacity: 0.15;
-    position: absolute;
-    top: 30px; right: 30px;
+.slide-fade {
+    animation: fadeSlide 0.6s ease-in-out forwards;
 }
-.review-text {
-    font-size: 1.15rem;
-    font-style: italic;
-    line-height: 1.8;
-    color: var(--brown);
-    font-family: var(--font-heading);
-    margin-bottom: 0;
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
-.btn-carousel {
+.btn-review-nav {
     background: transparent;
-    border: 1px solid var(--white);
-    width: 50px; height: 50px;
-    display: inline-flex;
-    align-items: center; justify-content: center;
-    color: var(--white);
-    margin-right: 10px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     transition: var(--transition-smooth);
+    padding: 10px;
 }
-.btn-carousel:hover {
-    background: var(--white);
-    color: var(--burgundy) !important;
-    border-color: var(--white);
+.btn-review-nav:hover, .btn-review-nav:active, .btn-review-nav.tap-active {
+    color: var(--wine-red) !important;
+    transform: scale(1.05);
+}
+.btn-review-nav:disabled {
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 /* Location / Map */
@@ -809,7 +802,7 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
 .cta-bg {
     position: absolute;
     top:0; left:0; right:0; bottom:0;
-    background-image: url('../assets/images/venue-1.jpg');
+    background-image: url('../images/1\\ \\(5\\).jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
