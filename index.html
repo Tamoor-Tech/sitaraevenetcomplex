@@ -333,10 +333,13 @@
     </section>
 
     <!-- Testimonials / Reviews Section -->
-    <section id="reviews" class="reviews-section py-large bg-cream text-center position-relative">
-        <div class="container scroll-reveal">
-            <span class="eyebrow text-burgundy mb-2 d-inline-block">GUEST EXPERIENCES</span>
-            <h2 class="luxury-heading text-burgundy mb-5">What Guests Say</h2>
+    <section id="reviews" class="reviews-section py-large text-center position-relative" style="overflow: hidden;">
+        <div class="reviews-bg"></div>
+        <div class="reviews-overlay"></div>
+        <div class="container scroll-reveal position-relative" style="z-index: 2;">
+            <span class="eyebrow text-gold mb-2 d-inline-block">GUEST EXPERIENCES</span>
+            <h2 class="luxury-heading text-white mb-4">What Guests Say</h2>
+            <div class="gold-line mx-auto mb-5" style="width: 80px; opacity: 0.8;"></div>
             
             <div class="reviews-carousel-wrapper mx-auto" style="max-width: 800px; position:relative;">
                 <div class="review-slides-container" id="reviewSlides">
@@ -373,21 +376,21 @@
                 </div>
 
                 <!-- Navigation -->
-                <div class="review-nav d-flex align-items-center justify-content-center mt-4 mb-5 gap-4">
-                    <button id="prevReviewBtn" class="btn-review-nav text-burgundy" aria-label="Previous Review">
+                <div class="review-nav d-flex align-items-center justify-content-center mt-5 mb-5 gap-4">
+                    <button id="prevReviewBtn" class="btn-review-nav text-cream" aria-label="Previous Review">
                         <i class="fa-solid fa-arrow-left me-2"></i> Previous
                     </button>
-                    <span class="review-indicator text-burgundy font-heading" style="font-size: 1.2rem; letter-spacing: 2px;">
+                    <span class="review-indicator text-gold font-heading" style="font-size: 1.2rem; letter-spacing: 2px;">
                         <span id="currentReviewIdx">01</span> / 05
                     </span>
-                    <button id="nextReviewBtn" class="btn-review-nav text-burgundy" aria-label="Next Review">
+                    <button id="nextReviewBtn" class="btn-review-nav text-cream" aria-label="Next Review">
                         Next <i class="fa-solid fa-arrow-right ms-2"></i>
                     </button>
                 </div>
                 
                 <!-- Google Reviews Button -->
                 <div class="mt-4">
-                    <a href="https://maps.google.com/?q=Sitara+Event+Complex+Bhakkar+Jhang+Road" target="_blank" class="btn-primary" style="border-color: var(--gold); background: var(--burgundy); color: var(--gold);">
+                    <a href="https://maps.google.com/?q=Sitara+Event+Complex+Bhakkar+Jhang+Road" target="_blank" class="btn-primary">
                         View All Google Reviews <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i>
                     </a>
                 </div>

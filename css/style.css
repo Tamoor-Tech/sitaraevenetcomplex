@@ -705,10 +705,37 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     opacity: 1;
 }
 
-/* Reviews Carousel */
+/* Reviews Carousel Background */
+.reviews-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Will be handled in inline style via JS or dynamically, setting a fallback here */
+    background-image: url('../assets/images/wedding_hall_bg.png'); /* Temporary generated URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+}
+.reviews-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(107,31,42,0.88) 0%, rgba(142,47,61,0.75) 100%);
+    z-index: 1;
+}
+
+/* Reviews Carousel Card */
 .review-slide {
     display: none;
-    padding: 2rem;
+    padding: 3rem 2rem;
+    background: rgba(255, 248, 238, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(216, 183, 122, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(43,23,23,0.15);
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
 }
 .review-slide.active {
     display: block;
@@ -729,9 +756,10 @@ h1, h2, h3, h4, h5, h6, .luxury-heading {
     letter-spacing: 1.5px;
     transition: var(--transition-smooth);
     padding: 10px;
+    color: var(--gold);
 }
 .btn-review-nav:hover, .btn-review-nav:active, .btn-review-nav.tap-active {
-    color: var(--wine-red) !important;
+    color: var(--white) !important;
     transform: scale(1.05);
 }
 .btn-review-nav:disabled {
